@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -24,10 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
@@ -35,34 +32,135 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.app_main_wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.app_slider {
+  width: 100%;
+}
+.app_slider img {
+  width: 100%;
+}
+
+.app_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.app_cont_inside{
+  width: 768px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app_cont_inside h2{
+  font-size: 40px;
+}
+.app_cont_inside p{
+  font-size: 20px;
+}
+.image_container, .image_container img {
+  width: 100%;
+}
+.image_container img {
+  border-radius: 5px;
+}
+.app_login_page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.app_ins_login {
+  width: 400px;
+}
+.app_ins_login h4 {
+  text-align: center;
+  font-size: 14px;
+}
+.app_ins_login form {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.app_ins_login form input {
+  border: 0px solid transparent;
+  height: 46px;
+  padding: 0px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+}
+.app_ins_login form input[type="submit"] {
+  border: 0px solid transparent;
+  height: 46px;
+  padding: 0px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #535bf2;
+  font-family: "Inter", sans-serif;
+}
+
+.app_ins_login_upload {
+  width: 600px;
+}
+.app_ins_login_upload h2 {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.app_ins_login_upload form {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.app_ins_login_upload form input {
+  border: 0px solid transparent;
+  height: 46px;
+  padding: 0px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+}
+.app_ins_login_upload form input[type='file'] {
+  border: 1px solid #444444;
+  height: 24px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+}
+.app_ins_login_upload form button {
+  border: 0px solid transparent;
+  height: 46px;
+  padding: 0px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #535bf2;
+  font-family: "Inter", sans-serif;
+  margin-top: 30px;
+}
+.inside_form {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.logout {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.20);
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 13px;
+  justify-content: center;
+  cursor: pointer;
 }

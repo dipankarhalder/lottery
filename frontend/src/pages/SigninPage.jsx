@@ -23,12 +23,19 @@ export const SigninPage = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="email" {...register("email")} />
-        <input type="password" {...register("password")} />
-        <input type="submit" />
-      </form>
+    <div className="app_login_page">
+      <div className="app_ins_login">
+        <h4>Login</h4>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input type="email" {...register("email")} placeholder="Email" />
+          <input
+            type="password"
+            {...register("password")}
+            placeholder="Password"
+          />
+          <input type="submit" />
+        </form>
+      </div>
     </div>
   );
 };

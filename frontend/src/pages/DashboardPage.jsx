@@ -1,9 +1,10 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { baseUrl, uploadImg } from "../services/path";
 
 export const DashboardPage = () => {
+  const navigate = useNavigate();
   const authToken = localStorage.getItem("token");
   const { register, handleSubmit } = useForm();
 
@@ -36,31 +37,50 @@ export const DashboardPage = () => {
       })
       .then((res) => {
         console.log("Upload successful:", res.data);
+        alert("Images upload successfully");
       })
       .catch((err) => {
         console.error("Upload failed:", err.response?.data || err.message);
       });
   };
 
-  return (
-    <div>
-      <h2>Upload Section Images</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {[1, 2, 3].map((i) => (
-          <div key={i} style={{ marginBottom: "20px" }}>
-            <label>Title {i}:</label>
-            <input
-              type="text"
-              {...register(`title${i}`)}
-              placeholder={`Enter title ${i}`}
-            />
-            <label>Image {i}:</label>
-            <input type="file" {...register(`image${i}`)} accept="image/*" />
-          </div>
-        ))}
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
 
-        <button type="submit">Upload</button>
-      </form>
+  return (
+    <div className="app_login_page">
+      <div className="app_ins_login_upload">
+        <h2>Upload Section Images</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="inside_form">
+              <div className="form_row">
+                <label>Title {i}:</label>
+                <input
+                  type="text"
+                  {...register(`title${i}`)}
+                  placeholder={`Enter title ${i}`}
+                />
+              </div>
+              <div className="form_row">
+                <label>Image {i}:</label>
+                <input
+                  type="file"
+                  {...register(`image${i}`)}
+                  accept="image/*"
+                />
+              </div>
+            </div>
+          ))}
+
+          <button type="submit">Upload</button>
+        </form>
+        <span onClick={handleLogout} className="logout">
+          Logout
+        </span>
+      </div>
     </div>
   );
 };
